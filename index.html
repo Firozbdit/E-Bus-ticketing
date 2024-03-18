@@ -3,9 +3,672 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Bus-Ticket</title>
-</head>
-<body>
-    
-</body>
+
+        <title>E Bus Paribahan</title>
+        <link rel="shortcut icon" href="images/bus-icon.png" type="image/x-icon">
+
+
+        <!-- Daisyui and Tailwind -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link rel="stylesheet" href="styles/style.css">
+
+        
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            clifford: '#da373d',
+                            commonHeadingColor: '#030712',
+                            navItemColor: 'rgba(3, 7, 18, 0.7)',
+                            green: '#1DD100',
+                            whiteColor: '#ffffff',
+                            leftCouponBgColor: '#FFBF0F',
+                            rightCouponBgColor: '#F78C9C',
+                            phParibahanBgColor: '#F7F8F8',
+                            commonModalColor: '#27AE60',
+                            modalTextColor: '#4A4A4A',
+                        }
+                    }
+                }
+            }
+        </script>
+
+  </head>
+
+    <body class="bg-whiteColor">
+
+        <!--  nav ber  -->
+        <header
+            class="md:container mx-auto  px-2 md:px-5 lg:px-8 flex justify-between items-center mt-2 md:mt-6 lg:mt-12 mb-3 lg:mb-7">
+            <div class="md:hidden lg:hidden">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Search</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="raleway-extrabold text-2xl md:text-3xl lg:text-4xl text-commonHeadingColor">
+                    <a href="#">E-Bus-Ticketing</a>
+                </h3>
+            </div>
+
+            <div class="p-2 hidden md:block lg:block">
+                <nav class="raleway-medium text-lg text-navItemColor">
+                    <ul class="flex gap-14">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Destination</a></li>
+                        <li><a href="#">Search</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="border-[#1DD100]/40 border rounded-xl bg-[#1DD100]/10">
+                <a href="#" class="flex items-center gap-2 lg:gap-3 px-4 md:px-6 lg:px-8 py-2 md:py-2 lg:py-4">
+                    <span class="text-green text-xl raleway-bold">Bus</span>
+                    <img src="images/bus-icon.png" alt="Bus icon." title="Bus image.">
+                </a>
+            </div>
+        </header>
+
+        <main>
+
+            
+            <section id="p_ticket_banner" class="md:container mx-auto  px-2 md:px-5 lg:px-8 ">
+
+                <!-- Banner. -->
+                <div class="hero rounded-[1em] lg:rounded-[2em] pb-32"
+                    style="background-image: url(images/banner.png);">
+                    <div class="hero-content text-center text-neutral-content mt-[.5em] md:mt-[3em] lg:mt-[4.5em]">
+                        <div class="space-y-2 lg:space-y-4">
+                            <h1 class="raleway-extrabold text-[2.5em] md:text-[3em] lg:text-[4em] text-whiteColor">
+                                End-to-End Travel with</h1>
+                            <h2 class="raleway-extrabold text-[2.5em] md:text-[3em] lg:text-[4em] text-green">E Bus Paribahan</h1>
+                                <p class="text-lg inter-regular text-whiteColor max-w-2xl mx-auto pb-8">Charge into Tomorrow, Ride Electric Today! <br>
+                                    Eco-friendly journeys pave the way.</p>
+                                <button
+                                    class="btn flex-nowrap px-7 py-5 bg-green text-xl raleway-bold rounded-xl text-commonHeadingColor border-none h-auto" onclick="openTicket('ph_paribahan')">Buy
+                                    Tickets</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rating -->
+                <div
+                    class="w-4/5 h-3/4 mx-auto -translate-y-24 mt-4 gap-4 md:gap-2 lg:gap-7 md:-translate-y-2/4 flex flex-col md:flex-row justify-between">
+                    <div
+                        class="bg-whiteColor rounded-3xl border-b-4 border-b-green p-4 lg:p-9 flex justify-between items-center gap-4 w-full">
+                        <div>
+                            <img src="images/people.png" alt="People Image." title="People Image.">
+                        </div>
+                        <div>
+                            <h3 class="inter-bold text-2xl lg:text-4xl text-commonHeadingColor mb-2">500K+</h3>
+                            <p class="inter-regular text-lg text-[#03071299]/60">Registered Users</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-whiteColor rounded-3xl border-b-4 border-b-green p-4 lg:p-9 flex justify-between items-center gap-4 w-full">
+                        <div>
+                            <img src="images/ticket-cupon.png" alt="Ticket Image" title="Ticket Image">
+                        </div>
+                        <div>
+                            <h3 class="inter-bold text-2xl lg:text-4xl text-commonHeadingColor mb-2">1.7 lacks</h3>
+                            <p class="inter-regular text-lg text-[#03071299]/60">Tickets Sold</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-whiteColor rounded-3xl border-b-4 border-b-green p-4 lg:p-9 flex justify-between items-center gap-4 w-full">
+                        <div>
+                            <img src="images/stoppage.png" alt="Bus stoppage Image." title="Bus stoppage Image.">
+                        </div>
+                        <div>
+                            <h3 class="inter-bold text-2xl lg:text-4xl text-commonHeadingColor mb-2">80K+</h3>
+                            <p class="inter-regular text-lg text-[#03071299]/60">Rental Partners</p>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Offer Page -->
+            <section id="best_offer" class="md:container mx-auto  px-2 md:px-5 lg:px-8 mb-[120px]">
+
+            <h3 class="text-center raleway-bold text-[2.5em] text-commonHeadingColor mb-12">Best offers for you</h3>
+
+                <!-- Coupon Section. -->
+                <div class="flex flex-col lg:flex-row justify-between gap-6">
+
+                    <div class="flex bg-leftCouponBgColor rounded-3xl w-full">
+                        <div class="m-auto p-6 sm:p-16 md:p-12 lg:p-10 xl:p-12">
+                            <h3 class="inter-black text-[2.5em] text-commonHeadingColor/80">15% OFF</h3>
+                            <p class="inter-semibold text-xl text-commonHeadingColor/80">On your next purchase</p>
+                            <p class="inter-medium text-lg text-commonHeadingColor/60">Use by January 2024</p>
+                        </div>
+                        <div>
+                            <img src="images/cupon-devider.png" alt="Coupon devider" title="Coupon devider Image."
+                                class="h-full">
+                        </div>
+                        <div
+                            class="m-auto pl-1 md:pl-4 lg:pl-5 pr-2 md:pr-6 lg:pr-8 text-center flex justify-center items-center">
+                            <div class="text-center">
+                                <span class="raleway-bold text-[2em] text-commonHeadingColor" id="new15_coupon_code">NEW15</span>
+                                <p class="raleway-medium text-xl text-commonHeadingColor/40">Coupon Code</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-rightCouponBgColor rounded-3xl w-full">
+                        <div class="m-auto p-6 sm:p-16 md:p-12 lg:p-6 xl:p-12">
+                            <h3 class="inter-black text-[2.5em] text-commonHeadingColor/80">20% OFF</h3>
+                            <p class="inter-semibold text-xl text-commonHeadingColor/80">On your next purchase</p>
+                            <p class="inter-medium text-lg text-commonHeadingColor/60">Use by January 2024</p>
+                        </div>
+                        <div>
+                            <img src="images/cupon-devider.png" alt="Coupon devider" title="Coupon devider Image."
+                                class="h-full">
+                        </div>
+                        <div
+                            class="pl-1 m-auto md:pl-4 lg:pl-5 pr-2 md:pr-6 lg:pr-8 text-center flex justify-center items-center">
+                            <div class="text-center mx-auto">
+                                <span class="raleway-bold text-[2em] text-commonHeadingColor" id="couple_20_coupon">Couple 20</span>
+                                <p class="raleway-medium text-xl text-commonHeadingColor/40">Coupon Code</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="text-center mt-14">
+                    <button
+                        class="btn btn-primary border border-green hover:border-green py-5 px-[30px] rounded-xl hover:bg-green bg-transparent text-green text-xl raleway-bold hover:text-commonHeadingColor h-auto flex-nowrap">See
+                        All Offers
+                    </button>
+                </div>
+
+            </section>
+
+
+            <!-- Ticket section -->
+            <section
+                class="2xl:container mx-auto py-4 md:py-20 lg:py-[120px] px-1 md:px-24 lg:px-[135px] bg-phParibahanBgColor border-t-4 border-green rounded-t-[2.5em] md:rounded-t-[60px] lg:rounded-t-[88px]" id="ph_paribahan">
+
+                <!-- E Bus Paribahan text. -->
+                <div class="text-center w-5/6 lg:w-2/3 mx-auto mb-11">
+                    <h3 class="text-[2.5em] raleway-bold text-commonHeadingColor mb-6">E Bus Paribahan</h3>
+                    <p class="inter-regular text-lg text-commonHeadingColor/60">Electrify Your Commute, Go Green with E-Bus!
+                        <br>Quiet, Clean, and Future-Forward Travel.</p>
+                </div>
+
+                <!-- Ticket first part. -->
+                <div class="flex flex-col lg:flex-row bg-whiteColor rounded-3xl py-8 lg:py-0">
+                    <div class="p-2 md:p-4 lg:p-8 flex-grow">
+                        <div class="flex gap-4 flex-col lg:flex-row justify-between items-center">
+                            <div class="flex flex-col lg:flex-row justify-between items-center gap-2 lg:gap-3">
+                                <img src="images/bus-logo.png" alt="Bus logo photo." title="Bus logo image.">
+                                <div class="text-center lg:text-left">
+                                    <h3 class="raleway-bold text-lg lg:text-[32px] text-commonHeadingColor">E-line
+                                        Paribahan</h3>
+                                    <p class="text-commonHeadingColor/60 text-lg inter-regular">Coach-250-EVB !
+                                        AC_Business_Class</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="rounded-xl bg-[#1DD100]/15 flex">
+                                    <div class="flex items-center gap-1 lg:gap-2 px-2 md:px-3 lg:px-4 py-1 md:py-3 lg:py-4">
+                                        <img src="images/seat-green.png" alt="Bus icon." title="Bus image.">
+                                        <span class="text-green text-lg inter-medium"><span id="seat_left">40</span> Seats left</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[1.5em] bg-phParibahanBgColor p-8 mt-6">
+                            <div class="flex justify-between pb-6 text-lg raleway-semibold">
+                                <span class="text-commonHeadingColor/60">Route</span>
+                                <span class="text-commonHeadingColor">Dhaka - Rajshahi</span>
+                            </div>
+                            <hr class="border border-commonHeadingColor/20 border-dashed">
+                            <div class="flex justify-between py-6 text-lg raleway-semibold">
+                                <span class="text-commonHeadingColor/60">Departure Time</span>
+                                <span class="text-commonHeadingColor">10:00 PM</span>
+                            </div>
+                            <hr class="border border-commonHeadingColor/20 border-dashed">
+                            <div
+                                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pt-6 text-commonHeadingColor/80 text-base inter-medium gap-6">
+                                <button class="flex justify-center btn rounded-xl bg-commonHeadingColor/5 px-6 py-5 h-auto">Boarding Point -
+                                    Kallayanpur</button>
+                                <button class="flex justify-center btn rounded-xl bg-commonHeadingColor/5 px-6 py-5 h-auto">Dropping Point -
+                                    Rajshahi</button>
+                                <button class="flex justify-center btn rounded-xl bg-commonHeadingColor/5 px-6 py-5 h-auto">Est. Time - 04
+                                    Hours</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="images/info-devider.png" alt="Info devider." title="Info devider image."
+                            class="h-full mx-auto">
+                    </div>
+                    <div class="w-full lg:w-2/12 text-center flex items-center lg:pr-3">
+                        <div class="mx-auto lg:mx-0">
+                            <img src="images/fare.png" alt="Fare Image." title="Fare image." class="inline-block">
+                            <h3 class="raleway-bold text-[2em] text-commonHeadingColor"><span id="per_seat_price">550</span> Taka</h3>
+                            <p class="raleway-semibold text-2xl text-commonHeadingColor/60">Per Seat</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ticket second part. -->
+                <div class="flex flex-col lg:flex-row p-2 md:p-4 lg:p-8 bg-whiteColor mt-6 bg-whiteColor rounded-3xl gap-10">
+
+                    <!-- Select seat available or not. -->
+                    <div class="lg:border-r-4 border-dashed pr-0 lg:pr-8 border-commonHeadingColor/30 flex-1">
+                        <h3 class="text-commonHeadingColor text-2xl raleway-semibold">Select Your Seat</h3>
+                        <hr class="border border-dashed border-commonHeadingColor/20 mt-6">
+                        <div class="inter-medium text-lg flex justify-between py-5">
+                            <div class="flex items-center">
+                                <img src="images/seat-gray.png" alt="Available seat icon."
+                                    title="Available seat Image.">
+                                <span class=" text-commonHeadingColor/50 pl-2">Available</span>
+                            </div>
+                            <div class="flex items-center">
+                                <img src="images/seat-green-filled.png" alt="Selected seat icon."
+                                    title="Selected seat image.">
+                                <span class=" text-green pl-2">Selected</span>
+                            </div>
+                        </div>
+                        <hr class="border border-dashed border-commonHeadingColor/20">
+                        
+                        <!-- Bus seats Row. -->
+                        <div class="flex flex-col mt-6" id="seats">
+                            <div class="flex justify-end w-full">
+                                <div
+                                    class="flex justify-end my-auto py-3 sm:py-4 md:py-5 lg:py-[10px] rounded-xl bg-phParibahanBgColor px-3 sm:px-12 md:px-10 lg:px-4">
+                                    <img src="images/wheel.png" alt="Driving wheel icon." title="Driving while image.">
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">A</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">A1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">A2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">A3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">A4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">B</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">B1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">B2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">B3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">B4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">C</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">C1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">C2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">C3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">C4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">D</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">D1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">D2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">D3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">D4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">E</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">E1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">E2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">E3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">E4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">F</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">F1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">F2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">F3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">F4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">G</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">G1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">G2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">G3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">G4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">H</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">H1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">H2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">H3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">H4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">I</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">I1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">I2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">I3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">I4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                            <div
+                                class="flex justify-between gap-1 sm:gap-4 md:gap-4 lg:gap-2 text-lg inter-medium text-commonHeadingColor/50 mt-6">
+                                <div class="flex justify-center items-center text-lg w-2">J</div>
+                        
+                                <div class="flex gap-[2px] sm:gap-2 justify-between w-full">
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">J1</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">J2</button>
+                                    </div>
+                        
+                                    <div class="flex gap-1 sm:gap-4 md:gap-4 lg:gap-2">
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">J3</button>
+                                        <button
+                                            class="w-14 sm:w-32 md:w-28 lg:w-16 flex justify-center  my-auto py-3 sm:py-7 md:py-9 lg:py-4 rounded-xl bg-phParibahanBgColor btn flex-nowrap text-commonHeadingColor/50 text-lg">J4</button>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+                        
+                        </div>
+                        
+                    </div>
+
+                    <!-- Seat price calculation. -->
+                    <div class="flex-1">
+                        <h3 class="text-commonHeadingColor text-2xl raleway-semibold">Select Your Seat</h3>
+                        <hr class="border border-dashed border-commonHeadingColor/20 my-6">
+                        <div class="p-8 bg-phParibahanBgColor rounded-xl">
+                            <div class="flex justify-between text-base text-commonHeadingColor inter-medium">
+                                <div class="flex gap-1 mb-4">
+                                    <h3 class="inline-block">Seat</h3>
+                                    <span class="p-2 py-3 bg-green text-whiteColor rounded-lg h-0 flex justify-between items-center" id="selected_seat_number">0</span>
+                                </div>
+                                <h3 class="inline-block">Class</h3>
+                                <h3 class="inline-block">Price</h3>
+                            </div>
+                            <hr class="border border-dashed border-commonHeadingColor/20">
+
+                            
+                            <div id="total_seat_info"></div>
+
+
+                            <hr class="border border-commonHeadingColor/20">
+                            <div class="flex justify-between text-base text-commonHeadingColor inter-medium py-4">
+                                <span>Total Price</span>
+                                <span>BDT <span id="total_seat_price">0</span></span>
+                            </div>
+                            <div class="mt-4 mb-6 flex flex-col lg:flex-row gap-3 items-center xl:relative" id="coupon_code_area">
+                                <div class="xl:w-full">
+                                    <input type="text" class="w-full py-5 lg:py-4 px-5 lg:px-1 " placeholder="Have any copupon?" id="coupon_input_field">
+                                </div>
+                                <div class="flex justify-center xl:absolute xl:right-2">
+                                    <button
+                                        class="btn flex-nowrap px-4 py-2 bg-green text-base inter-semibold rounded-lg text-whiteColor border-none h-auto" id="apply_coupon_button" disabled>Apply
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="discount_price_area" class=""></div>
+                            <div class="flex justify-between text-base text-commonHeadingColor inter-medium py-4">
+                                <span>Grand Total</span>
+                                <span>BDT <span id="grand_total_seat_price">0</span></span>
+                            </div>
+                        </div>
+                        <!-- Passenger Information Form. -->
+                        <div class="mt-6">
+                            <form action="">
+                                <div class="mb-6">
+                                    <label for="user_name" class="block mb-4 inter-semibold text-base text-commonHeadingColor">Passenger Name*</label>
+                                    <input type="text" id="user_name" placeholder="Enter your name" class="w-full p-6 border border-commonHeadingColor/10 rounded-xl" required>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="user_number" class="block mb-4 inter-semibold text-base text-commonHeadingColor">Phone Number*</label>
+                                    <input type="number" id="user_number" placeholder="Enter your phone number" class="w-full p-6 border border-commonHeadingColor/10 rounded-xl">
+                                </div>
+                                <div class="mb-6">
+                                    <label for="user_email" class="block mb-4 inter-semibold text-base text-commonHeadingColor">Email ID</label>
+                                    <input type="email" placeholder="Enter your email id" id="user_email" class="w-full p-6 border border-commonHeadingColor/10 rounded-xl">
+                                </div>  
+                                
+                                
+                                <div class="mb-6">
+                                    
+                                    
+                                    <!-- The button to open button or hide until requirement  -->
+                                    <a href="#my_modal_8" class="btn flex-nowrap h-auto w-full bg-green text-whiteColor px-7 py-5 rounded-2xl text-xl raleway-extrabold" disabled id="next_button">Next</a>
+
+                                    <div class="modal" role="dialog" id="my_modal_8">
+                                        <div class="modal-box text-center max-w-screen-md">
+                                            <div class="flex justify-center">
+                                                <img src="images/success.png" alt="Ticket buy succes icon." title="Ticket buy succes image.">
+                                            </div>
+                                            <p class="text-commonModalColor roboto-condensed-bold my-9 text-2xl">
+                                                SUCCESS
+                                            </p>
+                                            <div class="text-xl space-y-4">
+                                                <p class="roboto-condensed-medium text-modalTextColor">
+                                                    Thank you for Booking Our Bus Seats.<br>
+                                                    We are working hard to find the best service and deals for you.
+                                                </p>
+                                                <p class="roboto-condensed-light text-modalTextColor">
+                                                    Shortly you will find a confirmation in your email.
+                                                </p>
+                                                <div class="modal-action">
+                                                    <a href="index.html" class="btn mx-auto text-lg lg:text-xl bg-commonModalColor text-whiteColor h-auto flex-nowrap px-4 lg:px-[6.5em] py-1 lg:py-4 rounded-[2em]">Continue</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="inter-regular text-base flex justify-evenly text-commonHeadingColor/60">
+                                    <a href="#" class="underline">Terms and Conditions</a>
+                                    <a href="#" class="underline">Cancellation Policy</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+        </main>
+
+
+
+
+       <!-- Footer section -->
+        <footer class="2xl:container mx-auto py-10 md:py-20 lg:py-[120px] px-4 md:px-24 lg:px-[135px] bg-commonHeadingColor">
+            <div class="flex flex-col gap-10 text-center md:text-left sm:flex-row justify-between">
+                <div>
+                    <h3 class="text-4xl raleway-extrabold text-whiteColor mb-4">E-Bus-Ticketing</h3>
+                    <p class="inter-regular text-lg text-whiteColor/80">E-Bus-Ticketing is a digital platform to make your <br> daily commuting better.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl text-whiteColor raleway-semibold mb-5">Download our app form app store</h3>
+                    <a href="#" class="flex justify-center">
+                        <img src="images/playstore.png" alt="Google play store icon." title="Google play store icon image.">
+                    </a>
+                </div>
+            </div>
+            <hr class="border-[1.5px] border-whiteColor/30 border-dashed mt-12 mb-8">
+            <div class="text-base flex flex-col md:flex-row justify-between gap-4 text-center">
+                <p class="text-whiteColor/70 inter-regular">@all rights reserved, E-Bus-Ticketing services limited.2024</p>
+                <ul class="flex flex-col md:flex-row justify-between gap-2 lg:gap-8 text-whiteColor">
+                    <li><a href="#">Terms & condition</a></li>
+                    <li><a href="#">Return & refund policy</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </div>
+        </footer>
+
+
+        <!-- JavaScript. -->
+        <script src="tailwind.config.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/functional.js"></script>
+
+    </body>
+
 </html>
